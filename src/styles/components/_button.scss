@@ -1,0 +1,27 @@
+.button {
+    background: $blue;
+    border: none;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: $font-size-large;
+    font-weight: 300;
+    padding: $s-size;
+    line-height: 1;
+    text-decoration: none;
+    &:hover {
+        background: darken($blue, 5%);
+    }
+    &--link {
+        background: none;
+        &:hover {
+            background: none;
+            text-decoration: underline;
+        }
+    }
+    &--secondary {
+        background: #888;
+        &:hover {
+            background: darken(#888, 5%);
+        }
+    }
+}
