@@ -2,6 +2,7 @@
 
 exports[`should render NotFoundPage correctly 1`] = `
 <div>
+  <Connect(Header) />
   404 - 
   <Link
     replace={false}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Header correctly 1`] = `
+exports[`should show button login if user is no auth 1`] = `
 <header
   className="header"
 >
@@ -16,11 +16,44 @@ exports[`should render Header correctly 1`] = `
         to="/dashboard"
       >
         <h1>
-          Boilerplate
+          Blog
+        </h1>
+      </Link>
+      <Link
+        className="button button--link"
+        id="login"
+        replace={false}
+        to="/login"
+      >
+        Login
+      </Link>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`should show button logout if user is auth 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="header__content"
+    >
+      <Link
+        className="header__title"
+        replace={false}
+        to="/dashboard"
+      >
+        <h1>
+          Blog
         </h1>
       </Link>
       <button
         className="button button--link"
+        id="logout"
         onClick={[Function]}
       >
         Logout

@@ -7,13 +7,110 @@
     width: 100vw;
     &__box {
         background: fade-out(#FFF, .15);
-        border-radius: 3px;
-        padding: $l-size $m-size;
+        @include border-radius(3px);
+        padding: 0 $m-size;
+        overflow: hidden;
         text-align: center;
-        width: 25rem;
+        width: 30rem;
     }
     &__title {
-        margin: 0 0 $m-size 0;
+        margin: 2.5rem 0;
         line-height: 1;
+    }
+    &__divider {
+        color: #656a6e;
+        font-size: 2.4rem;
+        margin: 0.5rem 0 1.5rem 0;
+        position: relative;
+        &:before,
+        &:after {
+            border-top: 1px solid #656a6e;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            z-index: 0;
+        }
+        &:before {
+            left: auto;
+            right: 0;
+        }
+    }
+    .button {
+        @include border-radius(4px);
+        border: 1px solid darken($blue, 15%);
+        font-size: 2rem;
+        margin-bottom: 10px;
+        padding: 0.9rem;
+        width: 100%;
+        span {
+            display: inline-block;
+            padding: 0.8rem;
+            vertical-align: middle;
+        }
+        &--soc-icon {
+            border-right: 1px solid rgba(0, 0, 0, .2);
+            padding: 0.8rem 0!important;
+            margin-right: 0.3rem;
+            text-align: center;
+            width: 42px;
+            svg {
+                width: 50%;
+            }
+        }
+        &--google-login {
+            background: rgb(223, 74, 50);
+            border: 1px solid darken(rgb(223, 74, 50), 15%);
+            padding: 0;
+            text-align: left;
+            &:hover {
+                background: darken(rgb(223, 74, 50), 5%);
+                border-color: darken(rgb(223, 74, 50), 20%);
+            }
+        }
+        &--login-email {
+            background: $blue;
+            border: 1px solid darken($blue, 15%);
+            margin-top: 2.1rem;
+            padding: 0;
+            text-align: left;
+            &:hover {
+                background: darken($blue, 5%);
+                border-color: darken($blue, 20%);
+            }
+        }
+        &--reg-email {
+            background: rgb(68, 68, 68);
+            border: 1px solid darken(rgb(68, 68, 68), 15%);
+            padding: 0;
+            text-align: left;
+            &:hover {
+                background: darken(rgb(68, 68, 68), 5%);
+                border-color: darken(rgb(68, 68, 68), 20%);
+            }
+        }
+        &--link {
+            color: #333;
+            margin: 0;
+            @include transition(0.2s ease all);
+            &:hover {
+                color: $blue;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.my-collapsible {
+    .toggle-div {
+        display: none;
+    }
+    .button {
+        &--link {
+            border: none;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
     }
 }

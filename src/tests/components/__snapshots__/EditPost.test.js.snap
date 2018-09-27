@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditPost correctly 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Edit Post
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <Connect(BlogForm)
+      onSubmit={[Function]}
+      post={
+        Object {
+          "authorID": "thisismytestuid",
+          "authorName": "John Doe",
+          "body": "test post body 2",
+          "createdAt": -345600000,
+          "id": "2",
+          "title": "test title 2",
+        }
+      }
+    />
+    <button
+      className="button button--secondary"
+      onClick={[MockFunction]}
+    >
+      Remove Expense
+    </button>
+    <ConfirmModal
+      onRemove={[Function]}
+      onRequestClose={[MockFunction]}
+      postTitle="test title 2"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render error EditPost if uid is not macthed authorID 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Edit Post
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <p
+      className="message"
+    >
+      You don't allowed to edit this post
+    </p>
+    <Link
+      className="button"
+      replace={false}
+      to="/dashboard"
+    >
+      Back to Dashboard
+    </Link>
+  </div>
+</div>
+`;
+
+exports[`should render error if post doesn't exist 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Edit Post
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <p
+      className="message"
+    >
+      This post does not exist
+    </p>
+    <Link
+      className="button"
+      replace={false}
+      to="/dashboard"
+    >
+      Back to Dashboard
+    </Link>
+  </div>
+</div>
+`;

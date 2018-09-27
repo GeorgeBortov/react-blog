@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BlogForm correctly if author is defined 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input form--title"
+    onChange={[Function]}
+    placeholder="Post title"
+    type="text"
+    value=""
+  />
+  <JoditEditor
+    config={
+      Object {
+        "readonly": false,
+      }
+    }
+    onChange={[Function]}
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Post
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render BlogForm correctly if author is undefined 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input form--title"
+    onChange={[Function]}
+    placeholder="Post title"
+    type="text"
+    value=""
+  />
+  <JoditEditor
+    config={
+      Object {
+        "readonly": false,
+      }
+    }
+    onChange={[Function]}
+    value=""
+  />
+  <input
+    className="text-input form--author"
+    onChange={[Function]}
+    placeholder="Author"
+    type="text"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Post
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render BlogForm correctly with post if author is defined 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input form--title"
+    onChange={[Function]}
+    placeholder="Post title"
+    type="text"
+    value="test title 2"
+  />
+  <JoditEditor
+    config={
+      Object {
+        "readonly": false,
+      }
+    }
+    onChange={[Function]}
+    value="test post body 2"
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Post
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render BlogForm correctly with post if author is undefined 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input form--title"
+    onChange={[Function]}
+    placeholder="Post title"
+    type="text"
+    value="test title 1"
+  />
+  <JoditEditor
+    config={
+      Object {
+        "readonly": false,
+      }
+    }
+    onChange={[Function]}
+    value="<p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui saute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> <p><u>Lorem ipsum</u> dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi <u>ut</u> aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+  />
+  <input
+    className="text-input form--author"
+    onChange={[Function]}
+    placeholder="Author"
+    type="text"
+    value="George Bortov"
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Post
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render error for invalid form submission 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input form--title"
+    onChange={[Function]}
+    placeholder="Post title"
+    type="text"
+    value=""
+  />
+  <JoditEditor
+    config={
+      Object {
+        "readonly": false,
+      }
+    }
+    onChange={[Function]}
+    value=""
+  />
+  <input
+    className="text-input form--author"
+    onChange={[Function]}
+    placeholder="Author"
+    type="text"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Post
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render error for invalid form submission 2`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <p
+    className="form__error"
+  >
+    Please provide title and post body
+  </p>
+  <input
+    autoFocus={true}
+    className="text-input form--title"
+    onChange={[Function]}
+    placeholder="Post title"
+    type="text"
+    value=""
+  />
+  <JoditEditor
+    config={
+      Object {
+        "readonly": false,
+      }
+    }
+    onChange={[Function]}
+    value=""
+  />
+  <input
+    className="text-input form--author"
+    onChange={[Function]}
+    placeholder="Author"
+    type="text"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Save Post
+    </button>
+  </div>
+</form>
+`;

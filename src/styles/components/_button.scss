@@ -13,6 +13,7 @@
     }
     &--link {
         background: none;
+        cursor: pointer;
         &:hover {
             background: none;
             text-decoration: underline;
@@ -22,6 +23,13 @@
         background: #888;
         &:hover {
             background: darken(#888, 5%);
+        }
+    }
+    &--disabled {
+        background: lighten(#888, 10%);
+        cursor: default;
+        &:hover {
+            background: lighten(#888, 10%);
         }
     }
 }

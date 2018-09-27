@@ -1,0 +1,101 @@
+.form-group {
+    position: relative;
+    margin: 0 0 2.5rem 0;
+    padding-top: 2rem;
+    text-align: left;
+    .form-control {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid #656a6e;
+        @include box-sizing(border-box);
+        color: #656a6e;
+        font-size: 2rem;
+        font-style: italic;
+        width: 100%;
+        height: 34px;
+        padding: 0.6rem 0;
+        line-height: 1.42857143;
+        &:focus {
+          outline: none;
+        }
+        ~ label {
+            @include box-sizing(border-box);
+            color: #656a6e;
+            font-size: 2rem;
+            padding: 0.6rem 0;
+            line-height: 1.42857143;
+            top: 16px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            pointer-events: none;
+            @include transition(0.2s ease all);
+        }
+        &:focus:not([readonly]) ~ label, &.edited ~ label {
+            @include box-sizing(border-box);
+            top: 0;
+            font-size: 1.5rem;
+        }
+    }
+    label:after {
+        @include box-sizing(border-box);
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        visibility: hidden;
+        @include transition(0.2s ease all);
+    }
+    .form-control {
+        &:focus:not([readonly]) ~ label, &.edited ~ label {
+            &:after {
+                background: #2aa1dd;
+                visibility: visible;
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+    .error-message {
+        display: none;
+    }
+  }
+.form-group.total {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.form-group.total.error {
+    margin-bottom: 0;
+    padding-top: 4.2rem;
+    .error-message.total {
+        top: 0;
+        width: 100%;
+    }
+}
+.form-group.error {
+    margin-bottom: 3.5rem;
+    .error-message {
+        display: block;
+        color: #E26A6A;
+        position: absolute;
+        top: 57px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        left: 0;
+    }
+    .form-control {
+        border-bottom-color: #E26A6A;
+        & ~ label {
+            &:after {
+                background: #E26A6A;
+                visibility: visible;
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}

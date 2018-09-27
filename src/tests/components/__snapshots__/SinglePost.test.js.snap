@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SinglePost correctly 1`] = `
+<div>
+  <Connect(Header) />
+  <div>
+    <div
+      className="page-header"
+    >
+      <div
+        className="content-container"
+      >
+        <h1
+          className="page-header__title"
+        >
+          test title 1
+        </h1>
+      </div>
+    </div>
+    <div
+      className="content-container"
+    >
+      <div
+        className="post-wrap"
+      >
+        <div
+          className="post-wrap__text"
+        >
+          <Markup
+            content="<p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui saute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> <p><u>Lorem ipsum</u> dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi <u>ut</u> aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+            disableLineBreaks={false}
+            disableWhitelist={false}
+            emptyContent={null}
+            noHtml={false}
+            noHtmlExceptMatchers={false}
+            parsedContent={null}
+            tagName="div"
+          />
+        </div>
+        <div
+          className="post-wrap__data"
+        >
+          <span>
+            Posted by 
+            George Bortov
+          </span>
+          <span>
+            January 1st 1970
+             at 
+            1:00
+          </span>
+        </div>
+        <Link
+          className="button"
+          replace={false}
+          to="/dashboard"
+        >
+          Back to Dashboard
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render error if post doesn't exist 1`] = `
+<div>
+  <Connect(Header) />
+  <div
+    className="content-container"
+  >
+    <p
+      className="message"
+    >
+      This post does not exist
+    </p>
+    <Link
+      className="button"
+      replace={false}
+      to="/dashboard"
+    >
+      Back to Dashboard
+    </Link>
+  </div>
+</div>
+`;

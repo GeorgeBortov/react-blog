@@ -1,7 +1,8 @@
 import { firebase, googleAuthProvider } from '../firebase/firebase';
 
-export const login = uid => ({
+export const login = (uid, name) => ({
     type: 'LOGIN',
+    name,
     uid
 })
 
@@ -16,18 +17,6 @@ export const startRegisterUser = (email, password) => {
                         // console.log('unable to send email:', error.message)
                     })
             }).catch(error => {
-                if (error.code === 'auth/email-already-in-use') {
-                    // firebase.auth().signInWithPopup(googleAuthProvider)
-                    //     .then(() => {
-                    //         const credential = firebase.auth.EmailAuthProvider.credential(email, password)
-                    //         firebase.auth().currentUser.linkAndRetrieveDataWithCredential(credential)
-                    //             .then(() => {
-                    //                 // console.log('account linking success')
-                    //             }).catch(error => {
-                    //                 // console.log('account linking error:', error.message)
-                    //             })
-                    //     })
-                }
                 throw error;
             })
     }
@@ -55,9 +44,7 @@ export const startEmailLogin = (email, password) => {
 export const sendResetLink = email => {
     return () => {
         return firebase.auth().sendPasswordResetEmail(email)
-            .then(() => {
-                // console.log('reset link sent')
-            }).catch(error => {
+            .catch(error => {
                 throw error;
             })
     }
