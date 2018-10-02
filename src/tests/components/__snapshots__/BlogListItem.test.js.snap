@@ -96,11 +96,6 @@ exports[`should render BlogListItem with post and disabled editable link because
     >
       Read
     </Link>
-    <span
-      className="button button--disabled"
-    >
-      Edit
-    </span>
   </div>
 </div>
 `;

@@ -12,17 +12,15 @@ export const BlogListItem = ({ id, title, trimText, authorName, createdAt, uid, 
             </div>
         </div>
         <div className="list-item__data">
-            <span className="list-item__author">Posted by {authorName}</span>
+            <span className="list-item__author">Posted by {authorName !== '' ? authorName : 'Anonymous'}</span>
             <span className="list-item__time">{moment(createdAt).format('MMMM Do YYYY')} at {moment(createdAt).format('h:mm')}</span>
         </div>
         <div className="list-item__buttons">
             <Link className="button" to={`/read/${id}`}>Read</Link>
             {   
-                uid === authorID ? (
+                uid === authorID &&
                     <Link className="button" to={`/edit/${id}`}>Edit</Link>
-                ) : (
-                    <span className="button button--disabled">Edit</span>
-                )
+                
             }
             
         </div>

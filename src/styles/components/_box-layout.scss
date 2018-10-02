@@ -16,6 +16,14 @@
     &__title {
         margin: 2.5rem 0;
         line-height: 1;
+        a {
+            @include transition(0.2s ease all);
+            color: #333;
+            text-decoration: none;
+            &:hover {
+                color: $blue;
+            }
+        }
     }
     &__divider {
         color: #656a6e;

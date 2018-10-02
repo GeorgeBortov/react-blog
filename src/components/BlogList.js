@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BlogListItem from './BlogListItem';
+import selectPosts from '../selectors/select-posts';
 
+// Add pagination https://scotch.io/tutorials/build-custom-pagination-with-react
 
 export const BlogList = (props) => {
     return (
@@ -24,7 +26,7 @@ export const BlogList = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    posts: state.posts
+    posts: selectPosts(state.posts, state.filters)
 });
 
 const ConnectedBlogList = connect(mapStateToProps)(BlogList);

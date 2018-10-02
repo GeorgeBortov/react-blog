@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render BlogList with empty message 1`] = `
+<div
+  className="content-container"
+>
+  <div
+    className="list-body"
+  >
+    <div
+      className="list-item list-item--message"
+    >
+      <span>
+        No posts
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render BlogList with posts 1`] = `
 <div
   className="content-container"

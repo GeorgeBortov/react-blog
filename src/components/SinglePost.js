@@ -23,10 +23,10 @@ export const SinglePost = (props) => {
                                 <Markup content={props.post.body} /> 
                             </div>
                             <div className="post-wrap__data">
-                                <span>Posted by {props.post.authorName}</span>
+                                <span>Posted by {props.post.authorName !== '' ? props.post.authorName : 'Anonymous'}</span>
                                 <span>{moment(props.post.createdAt).format('MMMM Do YYYY')} at {moment(props.post.createdAt).format('h:mm')}</span>
                             </div>
-                            <Link className="button" to={'/dashboard'}>Back to Dashboard</Link>
+                            <Link className="button" to={'/'}>Back to Dashboard</Link>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ export const SinglePost = (props) => {
                         <p className="message">
                             This post does not exist
                         </p>
-                        <Link className="button" to={'/dashboard'}>Back to Dashboard</Link>
+                        <Link className="button" to={'/'}>Back to Dashboard</Link>
                     </div>
                 )
             }

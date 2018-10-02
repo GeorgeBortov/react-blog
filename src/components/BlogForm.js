@@ -11,7 +11,7 @@ export class BlogForm extends React.Component {
             title: props.post ? props.post.title : '',
             body: props.post ? props.post.body : '',
             createdAt: moment(),
-            authorName: props.userName ? props.userName : (props.post ? props.post.authorName : '' ),
+            authorName: props.userName ? props.userName : (props.post.authorName ? props.post.authorName : '' ),
             error: ''
         }
     }

@@ -5,6 +5,7 @@ import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetPosts } from './actions/posts';
 import { login, logout } from './actions/auth';
+import { setResetFilter } from './actions/filters';
 import 'normalize.css/normalize.css';
 import 'jodit';
 import 'jodit/build/jodit.min.css';
@@ -32,14 +33,19 @@ firebase.auth().onAuthStateChanged((user) => {
     if(user) {
         store.dispatch(login(user.uid, user.displayName));
         store.dispatch(startSetPosts()).then(() => {
+            store.dispatch(setResetFilter());
             renderApp();
             if (history.location.pathname === '/') {
-                history.push('/dashboard');
+                history.push('/');
             }
         });
     } else {
         store.dispatch(logout());
-        renderApp();
-        history.push('/');
+        store.dispatch(startSetPosts()).then(() => {
+            store.dispatch(setResetFilter());
+            renderApp();
+            // history.push('/login');
+        });
+        
     }
 });

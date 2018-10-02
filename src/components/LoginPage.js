@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { 
     startRegisterUser,
     startEmailLogin,
@@ -163,7 +164,7 @@ export class LoginPage extends React.Component {
         return (
             <div className="box-layout">
                 <div className="box-layout__box box-layout--login">
-                    <h1 className="box-layout__title">Log In</h1>
+                    <h1 className="box-layout__title"><Link to="/">Blog</Link></h1>
                     <button className="button button--google-login" onClick={this.props.startGoogleLogin}>
                         <span className="button--soc-icon">
                             <img src="/images/google-ico.png" />

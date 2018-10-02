@@ -8,7 +8,7 @@ test('should render BlogList with posts', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-// test('should render BlogList with empty message', () => {
-//     const wrapper = shallow(<BlogList posts={[]}/>);
-//     expect(wrapper).toMatchSnapshot();
-// });
+test('should render BlogList with empty message', () => {
+    const wrapper = shallow(<BlogList posts={[]}/>);
+    expect(wrapper).toMatchSnapshot();
+});
