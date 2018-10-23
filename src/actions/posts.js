@@ -1,5 +1,6 @@
 import database from '../firebase/firebase';
 
+
 // ADD_POST
 export const addPost = (post) => ({
     type: 'ADD_POST',
@@ -58,27 +59,58 @@ export const startEditPost = (id, updates) => {
 };
 
 // SET_POSTS
-export const setPosts = (posts) => ({
+export const setPosts = (posts, postsNumb) => ({
     type: 'SET_POSTS',
-    posts
+    posts,
+    postsNumb
 });
 
-export const startSetPosts = () => {
+export const startSetPosts = (startAt, endAt) => {
     return (dispatch, getState) => {
-        const uid = getState().auth.uid;
-        // return database.ref(`users/${uid}/posts`)
-        return database.ref(`posts`)
-        .once('value')
+        const sortBy = getState().filters.sortBy;
+        const title = getState().filters.title;
+        const authorID = getState().filters.authorID;
+        // Add order to posts
+        const ref = database.ref();
+        
+        
+        if(authorID !== "") {
+            var query = ref.child('posts').orderByChild('authorID').equalTo(authorID).once('value');
+        } else {
+            var query = ref.child('posts').once('value');
+        }
+        return query
+        
         .then((snapshot) => {
+            const unsortedPosts = [];
             const posts = [];
-
+            
             snapshot.forEach((childSnapshot) => {
-                posts.push({
-                    id: childSnapshot.key,
-                    ...childSnapshot.val()
-                });
-            })
-            dispatch(setPosts(posts));
+                if(childSnapshot.val().title.toLowerCase().includes(title.toLowerCase())) {
+                    unsortedPosts.push({
+                        id: childSnapshot.key,
+                        ...childSnapshot.val()
+                    }); 
+                }
+            });
+            
+            if(sortBy ===  'dateASC') {
+                var start = endAt;
+                var end = startAt;
+            } else if (sortBy ===  'dateDESC' || sortBy ===  'authorID') {
+                var start = unsortedPosts.length - startAt;
+                var end = unsortedPosts.length - endAt;
+            }
+            unsortedPosts.forEach(function(item, i) {
+                
+                if(i >= end && i < start) {
+                    posts.push({
+                        ...item
+                    });
+                }
+            });
+            
+            dispatch(setPosts(posts, unsortedPosts.length));
         });
     }
 };

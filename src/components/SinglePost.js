@@ -45,7 +45,7 @@ export const SinglePost = (props) => {
 };
 
 const mapStateToProps = (state, props) => ({
-    post: state.posts.find((post) => post.id === props.match.params.id),
+    post: state.posts.postsArr.find((post) => post.id === props.match.params.id),
 
 });
 

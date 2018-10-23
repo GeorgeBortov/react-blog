@@ -4,6 +4,7 @@ import authReducer from '../reducers/auth';
 import postsReducer from '../reducers/posts';
 import filtersReducer from '../reducers/filters';
 import modalReducer from '../reducers/modal';
+import loaderReducer from '../reducers/loader';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -13,7 +14,8 @@ export default () => {
             auth: authReducer,
             posts: postsReducer,
             filters: filtersReducer,
-            modal: modalReducer
+            modal: modalReducer,
+            loader: loaderReducer
         }),
         composeEnhancers(applyMiddleware(thunk))
     );

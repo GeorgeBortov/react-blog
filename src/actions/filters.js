@@ -20,6 +20,24 @@ export const setAuthorIDFilter = (authorID) => ({
     authorID
 });
 
+// SET_START_AT_FILTER
+export const setStartAtFilter = (startAt = 0) => ({
+    type: 'SET_START_AT_FILTER',
+    startAt
+});
+
+// SET_END_AT_FILTER
+export const setEndAtFilter = (endAt = 0) => ({
+    type: 'SET_END_AT_FILTER',
+    endAt
+});
+
+// SET_END_AT_FILTER
+export const setCurrentPage = (currentPage = 1) => ({
+    type: 'SET_CURRENT_PAGE',
+    currentPage
+});
+
 // SET_RESET_FILTER
 export const setResetFilter = () => ({
     type: 'SET_RESET_FILTER'

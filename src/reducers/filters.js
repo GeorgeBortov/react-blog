@@ -2,8 +2,12 @@
 
 const filtersReducerDefaultState = {
     title: '',
-    sortBy: 'dateASC',
-    authorID: ''
+    sortBy: 'dateDESC',
+    authorID: '',
+    startAt: 0,
+    endAt: 10,
+    currentPage: 1
+
 };
 
 export default (state = filtersReducerDefaultState, action) => {
@@ -34,6 +38,21 @@ export default (state = filtersReducerDefaultState, action) => {
         case 'SET_RESET_FILTER':
             return {
                 ...filtersReducerDefaultState
+            };
+        case 'SET_START_AT_FILTER':
+            return {
+                ...state,
+                startAt: action.startAt
+            };
+        case 'SET_END_AT_FILTER':
+            return {
+                ...state,
+                endAt: action.endAt
+            };
+        case 'SET_CURRENT_PAGE':
+            return {
+                ...state,
+                currentPage: action.currentPage
             };
         default:
             return state;

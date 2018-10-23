@@ -39,7 +39,7 @@ export class BlogForm extends React.Component {
                 title: this.state.title,
                 body: this.state.body,
                 createdAt: this.state.createdAt.valueOf(),
-                authorName: this.state.authorName.valueOf()
+                authorName: this.state.authorName
             });
         }
     };

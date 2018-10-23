@@ -7,9 +7,9 @@ export default (posts, filters) => {
         return textMatch && autorMatch;
     }).sort((a, b) => {
         if(filters.sortBy === 'dateASC') {
-            return a.createdAt < b.createdAt ? 1 : -1;
-        } else if(filters.sortBy === 'dateDESC') {
             return a.createdAt < b.createdAt ? -1 : 1
+        } else if(filters.sortBy === 'dateDESC' || filters.sortBy ===  'authorID') {
+            return a.createdAt < b.createdAt ? 1 : -1;
         }
     });
 };

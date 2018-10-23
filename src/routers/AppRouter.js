@@ -11,7 +11,7 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
 export const history = createHistory();
- 
+
 const AppRouter = () => (
     <Router history={history}>
         <div>

@@ -30,7 +30,7 @@
     "interweave": "^9.2.1",
     "jodit-react": "^1.0.17",
     "moment": "^2.22.2",
-    "node-sass": "4.5.3",
+    "node-sass": "^4.9.3",
     "normalize.css": "7.0.0",
     "numeral": "2.0.6",
     "raf": "^3.3.2",
