@@ -4,7 +4,7 @@ export const login = (uid, name) => ({
     type: 'LOGIN',
     name,
     uid
-}) 
+})
 
 export const startRegisterUser = (email, password) => {
     return () => {
