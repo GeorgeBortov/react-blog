@@ -6,12 +6,12 @@
     &__data {
         color: $grey;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         font-size: 1.5rem;
         margin: 1.5rem 0;
         span {
             display: inline-block;
-            margin-right: 1rem;
             vertical-align: middle;
         }
     }
@@ -19,4 +19,29 @@
 .message {
     font-size: 1.8rem;
     text-align: center;
+}
+.star-ratings-wrap {
+    .score {
+        display: inline-block;
+        margin-left: 5px;
+        vertical-align: 3px;
+    }
+    .star-ratings {
+        background: url(/images/star-rating-sprite.png) repeat-x;
+        display: inline-block;
+        font-size: 0;
+        height: 21px;
+        line-height: 0;
+        overflow: hidden;
+        text-indent: -999em;
+        vertical-align: top;
+        width: 110px;
+        .star-ratings-sprite-rating {
+            background: url(/images/star-rating-sprite.png) repeat-x;
+            background-position: 0 100%;
+            float: left;
+            height: 21px;
+            display: block;
+        }
+    }
 }

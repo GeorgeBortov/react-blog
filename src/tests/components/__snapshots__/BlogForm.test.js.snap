@@ -130,7 +130,7 @@ exports[`should render BlogForm correctly with post if author is undefined 1`] =
     onChange={[Function]}
     placeholder="Author"
     type="text"
-    value="George Bortov"
+    value=""
   />
   <div>
     <button

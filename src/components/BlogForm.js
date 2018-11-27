@@ -11,7 +11,7 @@ export class BlogForm extends React.Component {
             title: props.post ? props.post.title : '',
             body: props.post ? props.post.body : '',
             createdAt: moment(),
-            authorName: props.userName ? props.userName : (props.post.authorName ? props.post.authorName : '' ),
+            authorName: props.userName,
             error: ''
         }
     }
@@ -84,7 +84,7 @@ export class BlogForm extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    userName: state.auth.name || ''
+    userName: state.auth.name || state.auth.email
 });
 
 export default connect(mapStateToProps, undefined)(BlogForm);

@@ -47,7 +47,7 @@ export class EditPost extends React.Component {
                                     post={this.props.post}
                                     onSubmit={this.onSubmit}
                                 />
-                                <button className="button button--secondary" onClick={this.props.openModal}>Remove Expense</button>
+                                <button className="button button--secondary" onClick={this.props.openModal}>Remove Post</button>
                                 <ConfirmModal
                                     isOpen={this.props.modalStatus}
                                     onRequestClose={this.props.closeModal}

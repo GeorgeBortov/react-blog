@@ -35,7 +35,7 @@ exports[`should render EditPost correctly 1`] = `
       className="button button--secondary"
       onClick={[MockFunction]}
     >
-      Remove Expense
+      Remove Post
     </button>
     <ConfirmModal
       onRemove={[Function]}
@@ -72,7 +72,7 @@ exports[`should render error EditPost if uid is not macthed authorID 1`] = `
     <Link
       className="button"
       replace={false}
-      to="/dashboard"
+      to="/"
     >
       Back to Dashboard
     </Link>
@@ -106,7 +106,7 @@ exports[`should render error if post doesn't exist 1`] = `
     <Link
       className="button"
       replace={false}
-      to="/dashboard"
+      to="/"
     >
       Back to Dashboard
     </Link>

@@ -2,7 +2,8 @@
 
 const postsReducerDefaultState = {
     postsArr: [],
-    postTotalNumb: 0,
+    comentsArr: [],
+    postTotalNumb: 0
 };
 
 export default (state = postsReducerDefaultState, action) => {
@@ -14,6 +15,21 @@ export default (state = postsReducerDefaultState, action) => {
                     ...state.postsArr,
                     action.post
                 ]
+            };
+        case 'ADD_COMMENT':
+            return {
+                ...state,
+                comentsArr: [
+                    ...state.comentsArr,
+                    action.comment
+                ]
+                // postsArr: state.postsArr.comments.concat(action.comment)
+                
+            };
+        case 'SET_COMMENTS':
+            return {
+                ...state,
+                comentsArr: action.comments, 
             };
         case 'REMOVE_POST':
             return {
@@ -36,6 +52,7 @@ export default (state = postsReducerDefaultState, action) => {
             };
         case 'SET_POSTS':
             return {
+                ...state,
                 postsArr: action.posts,
                 postTotalNumb: action.postsNumb
             };

@@ -58,14 +58,14 @@ test('should handle startEditPost', () => {
     expect(startEditPost).toHaveBeenLastCalledWith(posts[1].id, posts[1]);
 });
 
-test('should handle startRemovePost', () => {
-    wrapper.find('ConfirmModal').prop('onRemove')();
-    expect(startRemovePost).toHaveBeenLastCalledWith({
-        id: posts[1].id
-    });
-    expect(closeModal).toHaveBeenCalled();
-    expect(history.push).toHaveBeenLastCalledWith('/');
-});
+// test('should handle startRemovePost', () => {
+//     wrapper.find('ConfirmModal').prop('onRemove')();
+//     expect(startRemovePost).toHaveBeenLastCalledWith({
+//         id: posts[1].id
+//     });
+//     expect(closeModal).toHaveBeenCalled();
+//     expect(history.push).toHaveBeenLastCalledWith('/');
+// });
 
 test('should handle openModal', () => {
     wrapper.find('.button.button--secondary').simulate('click');

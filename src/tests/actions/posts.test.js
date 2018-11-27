@@ -154,14 +154,14 @@ test('should setup set post action object with data', () => {
     });
 });
 
-test('should fetch the posts from database', (done) => {
-    const store = createMockStore(defaultAuthState);
-    store.dispatch(startSetPosts()).then(() => {
-        const actions = store.getActions();
-        expect(actions[0]).toEqual({
-            type: 'SET_POSTS',
-            posts
-        });
-        done();
-    });
-});
+// test('should fetch the posts from database', (done) => {
+//     const store = createMockStore(defaultAuthState);
+//     store.dispatch(startSetPosts()).then(() => {
+//         const actions = store.getActions();
+//         expect(actions[0]).toEqual({
+//             type: 'SET_POSTS',
+//             posts
+//         });
+//         done();
+//     });
+// });

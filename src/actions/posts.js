@@ -114,3 +114,53 @@ export const startSetPosts = (startAt, endAt) => {
         });
     }
 };
+
+// ADD_COMMENT
+export const addComment = (comment) => ({
+    type: 'ADD_COMMENT',
+    comment
+});
+
+export const startAddComment = (commentData = {}, postId) => {
+    return (dispatch) => {
+        const {
+            body = '',
+            rate = '',
+            authorName = '',
+            createdAt = 0
+        } = commentData;
+        const comment = { body, rate, authorName, createdAt }
+        
+        return database.ref(`posts/${postId}/comments`).push(comment).then((ref) => {
+            dispatch(addComment({
+                id: ref.key,
+                ...comment
+            }));
+        });
+    }
+};
+
+// SET_COMMENTS
+export const setComments = (comments) => ({
+    type: 'SET_COMMENTS',
+    comments
+});
+
+export const startSetComments = (pid) => {
+    return (dispatch) => {
+        
+        return database.ref(`posts/${pid}/comments`)
+        .once('value')
+        .then((snapshot) => {
+            const comments = [];
+
+            snapshot.forEach((childSnapshot) => {
+                comments.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                });
+            })
+            dispatch(setComments(comments));
+        });
+    }
+};

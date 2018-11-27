@@ -13,7 +13,7 @@ exports[`should show button login if user is no auth 1`] = `
       <Link
         className="header__title"
         replace={false}
-        to="/dashboard"
+        to="/"
       >
         <h1>
           Blog
@@ -45,7 +45,7 @@ exports[`should show button logout if user is auth 1`] = `
       <Link
         className="header__title"
         replace={false}
-        to="/dashboard"
+        to="/"
       >
         <h1>
           Blog
